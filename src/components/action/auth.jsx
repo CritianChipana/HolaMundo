@@ -1,7 +1,7 @@
 import { types } from "../../types/types";
 
 export const authLog = () => ({
-    type: types.authLog
+    type:types.authLog
 })
 
 export const authLogout = ()=> ({

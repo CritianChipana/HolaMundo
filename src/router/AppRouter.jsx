@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import {
     BrowserRouter as Router,
+    Redirect,
     Switch,
 } from "react-router-dom";
 import { PrivateRouter } from './PrivateRouter';
@@ -24,16 +25,19 @@ export const AppRouter = () => {
                     <Switch>
 
                         <PublicRouter
+                            // exact
                             path="/"
                             component = { PublicScreenRoutes}
                             isAuthenticated={checking}
                         />
 
                         <PrivateRouter
+                            // exact
                             path="/"
                             component = { PrivateScreenRoutes }
                             isAuthenticated= { checking }
                         />
+                    
                         
                     </Switch>    
                 </div>

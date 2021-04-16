@@ -1,5 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { types } from '../../../types/types';
+import { authLog } from '../../action/auth';
 import { listarbebidas } from '../../action/bebida';
 import "./boton.css";
 
@@ -8,7 +10,7 @@ export const Boton = () => {
 const dispatch = useDispatch();
 
     const handleListarBebidas = () => {
-        dispatch( listarbebidas() )
+        dispatch( listarbebidas() );
     }
 
     return (

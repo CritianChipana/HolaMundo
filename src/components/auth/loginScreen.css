@@ -1,3 +1,99 @@
-h1{
-    color: aquamarine;
+
+
+.contenedor-login{
+    border: 1px solid black;
+    background: #767474;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    
+}
+
+.login-form{
+
+    display: flex;
+    font-family: 'Comfortaa', cursive;
+    height: 500px;
+    width: 70%;
+
+}
+
+.form-column-a{
+    /* border: 1px solid black; */
+    padding: 20px;
+    background-color: #A4C4B6;
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+    border-top-left-radius: 42px;
+    border-bottom-left-radius: 42px;
+    box-shadow:  35px 35px 70px #999797;
+
+
+
+}
+
+.form-column-b{
+    /* border: 1px solid black; */
+    padding: 20px;
+    /* display: flex;
+    flex-direction: column; */
+    background-color: white;
+    border-top-right-radius: 42px;
+    border-bottom-right-radius: 42px;
+    box-shadow:  35px 35px 70px #999797;
+    /* align-content: center;
+    position: relative; */
+} 
+.asd{
+    /* border: 1px solid black; */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    align-content: center;
+    position: relative;
+    top: 110px;
+}
+
+
+
+.img-login{
+    
+    width: 70%;
+    border: 1px solid black;
+    height: 70%;
+}
+
+input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    opacity: 1;
+}
+
+input[type="text"]:hover{
+/* background-color: aqua; */
+}
+
+.usuario, .password{
+    border: none;
+    width: 100%;
+    height: 35px;
+
+}
+
+
+.usuario{
+    opacity: 0.5;
+    border-bottom: 1px solid black;
+}
+
+.password{
+    border-bottom: 1px solid black;
+    opacity: 0.5;
 }

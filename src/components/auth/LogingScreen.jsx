@@ -1,33 +1,76 @@
 import React from 'react';
+import { useForm } from '../../hooks/useForm';
 import "./loginScreen.css";
-import { useDispatch } from 'react-redux'
-import { authLog } from '../action/auth';
-import { Redirect } from 'react-router';
+// import { useDispatch } from 'react-redux'
+
 
 
 export const LogingScreen = () => {
 
-const dispatch = useDispatch();
+// const dispatch = useDispatch();
 
-const handleClickLog = () =>{
+const [formLoginValue, handleInputChange] = useForm({
+    usuario:'',
+    password: ''
+});
 
-    dispatch( authLog() );
-    console.log("asd");
-    <Redirect to="/" />
+const {usuario, password} = formLoginValue;
+
+const handleLogIn = () =>{
+
+   console.log("A");
+    
 
 }
 
     return (
-        <div>
-            <h1>login</h1>
-            <hr/>
+        <div className="contenedor-login" >
+            <form onSubmit={ handleLogIn } className="login-form">
+                <div className="form-column-a">
+                    <img 
+                        src="https://i.pinimg.com/originals/f3/06/5c/f3065c2ad40d90e218c55c8376b1d3b7.png"
+                        alt="Imagen de la user"
+                        className="img-login"
+                    />
+                    <h5>Bienvenido de vuelta</h5>
+                    <p>vamos a segir creciendo</p>
+                </div>
 
-            <button
-                className="btn btn-primary"
-                onClick={ handleClickLog }
-            >
-                log in
-            </button>
+                <div className="form-column-b">
+                    <div className="asd">
+
+                        <label htmlFor="usuario">Usuario: <br/>
+                            <input 
+                                type="text" 
+                                className="usuario"
+                                name="usuario" 
+                                value={ usuario }
+                                onChange={ handleInputChange }
+                                placeholder="example123"
+                            />
+                        </label>
+
+                        <label htmlFor="password">Password: <br/>
+                            <input 
+                                type="password" 
+                                className="password"
+                                name="password"
+                                value={ password }
+                                onChange= { handleInputChange }
+                                placeholder="***********"
+
+                            />
+                        </label>
+
+                        <button
+                            className="btn btn-primary"
+                        >
+                            log in
+                        </button>
+                    </div>
+                </div>
+
+            </form>
 
         </div>
     )

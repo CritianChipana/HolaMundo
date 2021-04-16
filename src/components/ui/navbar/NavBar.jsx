@@ -59,13 +59,32 @@ export const NavBar = () => {
                 <ul className="navbar-nav ml-auto">
                     {
                         (checking)
-                        ? 
+                        ?   <>
+                                <NavLink
+                                    activeClassName="active"
+                                    className="nav-item nav-link"
+                                    exact
+                                    to="/update"
+                                >
+                                    MODIFICAR
+                                </NavLink>
+
+                                <NavLink
+                                    activeClassName="active"
+                                    className="nav-item nav-link"
+                                    exact
+                                    to="/delete"
+                                >
+                                    Eliminar
+                                </NavLink>
                                 <button 
                                     className=" btn nav-item nav-link" 
                                     onClick={handleLogout}
                                 >
                                     Logout
                                 </button>
+
+                            </>
                                 
                         :
                             <Link 
