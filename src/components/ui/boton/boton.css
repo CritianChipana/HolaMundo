@@ -1,0 +1,30 @@
+.boton-principal{
+
+    padding: 5px 30px 5px 30px;
+    background-color: #0161CD ;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.fa-search{
+    padding-right: 5px;
+    color: white;
+    /* text-si */
+    width: 30px;
+}
+
+.btn-informacion{
+    color: aquamarine;
+}
+
+.boton-principal:hover{
+
+    opacity: 0.5;
+
+}
+
+.boton-principal:focus{
+    outline: none;
+}
