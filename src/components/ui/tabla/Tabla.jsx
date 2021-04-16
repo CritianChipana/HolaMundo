@@ -9,6 +9,10 @@ export const Tabla = () => {
 
     console.log(datas);
 
+    const handleClickBuscar = ()=>{
+        console.log("click");
+    }
+
     return (
 
         <div className="contenedor-tabla" >
@@ -28,8 +32,8 @@ export const Tabla = () => {
                 <tbody>
 
                     {
-                        datas.map( e => (
-                            <tr key={e.idcodigo} >
+                        datas.map( (e,i )=> (
+                            <tr key={e._id} >
                                 <td>{e.Nombre}</td>
                                 <td className="td-number">{ e.Agua }</td>
                                 <td className="td-number">{ e.Calcio }</td>
@@ -39,7 +43,12 @@ export const Tabla = () => {
                                 <td className="td-number">{ e.Fosforo }</td>
                                 <td className="td-number">{ e.Potasio }</td>
                                 <td className="td-number">{ e.Zinc }</td>
-                                <Link to="/nutri" >Calcular...</Link>
+                                <td>
+                                {<Link 
+                                    to={ `/nutri/${i}`}
+                                    onClick={ handleClickBuscar }
+                                >Calcular...</Link>}
+                                </td>
                             </tr>
                         ))
                     }

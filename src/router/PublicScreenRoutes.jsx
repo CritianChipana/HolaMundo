@@ -17,7 +17,7 @@ export const PublicScreenRoutes = () => {
                     <Route exact path="/" component={ NutriScreen } />
                     <Route exact path="/documentos" component={ Documentos }   />
                     <Route exact path="/login" component={ LogingScreen }   />
-                    <Route exact path="/nutri" component={ NutriItem }   />
+                    <Route exact path="/nutri/:idnutri" component={ NutriItem }   />
                     <Redirect to="/nutriSheap" /> 
                 </Switch>
             </div>

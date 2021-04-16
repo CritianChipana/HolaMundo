@@ -11,6 +11,7 @@ export const bebidaReducer =(state =initialvalue, action)=>{
         
         case types.bebidaListar:
             return  {
+                ok:true,
             ...action.payload
             };
     
