@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 
 import {
     BrowserRouter as Router,
-    Redirect,
     Switch,
 } from "react-router-dom";
 import { PrivateRouter } from './PrivateRouter';
@@ -15,7 +14,11 @@ import { PublicScreenRoutes } from './PublicScreenRoutes';
 
 export const AppRouter = () => {
 
-    const {checking} = useSelector(state => state.auth)
+    const {checking,uid} = useSelector(state => state.auth)
+
+    if( checking ){
+        return <h1>cargando ....</h1>
+    }
 
     return (
         <>
@@ -28,16 +31,15 @@ export const AppRouter = () => {
                             // exact
                             path="/"
                             component = { PublicScreenRoutes}
-                            isAuthenticated={checking}
+                            isAuthenticated={!!uid}
                         />
 
                         <PrivateRouter
                             // exact
                             path="/"
                             component = { PrivateScreenRoutes }
-                            isAuthenticated= { checking }
+                            isAuthenticated= {!!uid }
                         />
-                    
                         
                     </Switch>    
                 </div>

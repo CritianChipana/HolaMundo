@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useForm } from '../../hooks/useForm';
 import "./loginScreen.css";
-// import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { authLog, authPrueba } from '../action/auth';
+import { Redirect } from 'react-router';
 
 
 
 export const LogingScreen = () => {
 
-// const dispatch = useDispatch();
+const dispatch = useDispatch();
+
+
 
 const [formLoginValue, handleInputChange] = useForm({
     usuario:'',
@@ -16,10 +20,19 @@ const [formLoginValue, handleInputChange] = useForm({
 
 const {usuario, password} = formLoginValue;
 
-const handleLogIn = () =>{
 
-   console.log("A");
+
+const handleLogIn = (e) =>{
+    e.preventDefault();
+    console.log("A");
     
+
+    dispatch( authPrueba({
+        name:"acas",
+        uid:"asd"
+       
+    }) );
+    <Redirect to="/" />
 
 }
 

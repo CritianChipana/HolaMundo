@@ -6,7 +6,7 @@ import { authLogout } from '../../action/auth';
 
 export const NavBar = () => {
 
-    const {checking} = useSelector(state => state.auth)
+    const { uid} = useSelector(state => state.auth)
     const dispatch = useDispatch();
 
     const handleLogout = ()=>{
@@ -58,8 +58,9 @@ export const NavBar = () => {
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul className="navbar-nav ml-auto">
                     {
-                        (checking)
-                        ?   <>
+                        (!!uid)
+                        ?   
+                        //<>
                                 <NavLink
                                     activeClassName="active"
                                     className="nav-item nav-link"
@@ -69,22 +70,22 @@ export const NavBar = () => {
                                     MODIFICAR
                                 </NavLink>
 
-                                <NavLink
-                                    activeClassName="active"
-                                    className="nav-item nav-link"
-                                    exact
-                                    to="/delete"
-                                >
-                                    Eliminar
-                                </NavLink>
-                                <button 
-                                    className=" btn nav-item nav-link" 
-                                    onClick={handleLogout}
-                                >
-                                    Logout
-                                </button>
+                        //         <NavLink
+                        //             activeClassName="active"
+                        //             className="nav-item nav-link"
+                        //             exact
+                        //             to="/delete"
+                        //         >
+                        //             Eliminar
+                        //         </NavLink>
+                        //         <button 
+                        //             className=" btn nav-item nav-link" 
+                        //             onClick={handleLogout}
+                        //         >
+                        //             Logout
+                        //         </button>
 
-                            </>
+                        //     </>
                                 
                         :
                             <Link 

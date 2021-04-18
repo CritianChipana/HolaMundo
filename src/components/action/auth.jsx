@@ -4,7 +4,14 @@ export const authLog = () => ({
     type:types.authLog
 })
 
-export const authLogout = ()=> ({
-    type:types.authLogout
-})
+export const authLogout = ()=> {
+    return {
+        type:types.authLogout
+        }
+}
 
+export const authPrueba = (action)=>({   
+        type: types.authPrueba,
+        payload:action
+    
+})
